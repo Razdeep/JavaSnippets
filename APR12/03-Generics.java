@@ -2,18 +2,23 @@
  * ----------------------
  *    Generics in java
  * ----------------------
- * Note: Only class names can be through the angular brackets of
- * generic classes
+ * 
  */
-class Gen <T>{
-    T obj;
-    Gen(T obj)
+class Gen <T1, T2>{
+    T1 obj1;
+    T2 obj2;
+    Gen(T1 obj1, T2 obj2)
     {
-        this.obj = obj;
+        this.obj1 = obj1;
+        this.obj2 = obj2;
     }
-    T getObj()
+    T1 getObj1()
     {
-        return obj;
+        return obj1;
+    }
+    T2 getObj2()
+    {
+        return obj2;
     }
     void show()
     {
@@ -26,7 +31,7 @@ class Solution
     {
         Integer i = new Integer(100);
         String s = "Demo";
-        Gen<Integer> obj = new Gen<Integer>(i);
+        Gen<Integer, String> obj = new Gen<Integer>(i);
         Gen<String> obj2 = new Gen<>(s);
         int i2    = obj.getObj();
         String s2 = obj2.getObj();

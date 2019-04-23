@@ -2,8 +2,8 @@
  * ----------------------
  *    Generics in java
  * ----------------------
- * Note: Only class names can be through the angular brackets of
- * generic classes
+ * @TODO
+ * 
  */
 class Gen <T>{
     T obj;
@@ -30,6 +30,7 @@ class Solution
         Gen<String> obj2 = new Gen<>(s);
         int i2    = obj.getObj();
         String s2 = obj2.getObj();
+        i2 = s2;
         System.out.println("obj.getObj() = " + i2);
         System.out.println("obj2.getObj() = " + s2);
         obj.show();
