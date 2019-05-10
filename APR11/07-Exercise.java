@@ -9,6 +9,7 @@
  * cars having price less than amt.
  * 
  */
+import java.io.*;
 import java.util.*;
 class Solution{
 
@@ -31,6 +32,29 @@ class Solution{
                 System.out.println("Name : " + this_car.name + "\tPrice : " + this_car.price + "\tMileage : " + this_car.mileage);
         }
     }
+    public static void storeCars()
+    {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            fos = new FileOutputStream("cars.txt");
+            oos = new ObjectOutputStream(fos);
+            for(Car this_car: carList)
+            {
+                oos.writeObject(this_car);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally{
+            if (oos != null)
+                oos.close();
+            if(fos != null)
+                fos.close();
+        }
+    }
     public static void main(String args[])
     {
         Scanner scanner = new Scanner(System.in);
@@ -42,6 +66,7 @@ class Solution{
             System.out.println("Enter name, price, mileage ");
             carList.add(new Car(scanner.next(), scanner.nextInt(), scanner.nextInt()));
         }
+        storeCars();
         System.out.println("Enter filter amount ");
         showCars(scanner.nextInt());
     }

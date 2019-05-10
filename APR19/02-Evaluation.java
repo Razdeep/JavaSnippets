@@ -1,8 +1,8 @@
-import java.io.FileInputStream;
-
 /**
  * WAP to split the file into multiple files
  */
+// @TODO
+import java.io.FileInputStream;
 class Solution
 {
     public static void main(String args[])

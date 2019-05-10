@@ -25,7 +25,9 @@ class Solution{
     public static void main(String args[])
     {
         try{
-           
+           ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("Serial"));
+           MyClass myObject = (MyClass)objectInputStream.readObject();
+           System.out.println(myObject);
         }
         catch(Exception e)
         {

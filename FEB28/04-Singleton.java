@@ -1,17 +1,18 @@
-// @TODO
 class DemoSingle{
-    private DemoSingle obj = new DemoSingle();
+    private static DemoSingle obj;
     private DemoSingle()
     {
         
     }
     public static DemoSingle getObject()
     {
+        if(obj == null)
+            obj = new DemoSingle();
         return obj;
     }
-    void bark()
+    public void bark()
     {
-        System.out.println("Bhow Bhow");
+        System.out.println("Bhow bhow");
     }
 }
 class Solution{
